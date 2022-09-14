@@ -1,7 +1,8 @@
 import { foo } from "./test";
 import {render} from 'react-dom';
+import { Counter } from "./components/Counter";
 
 render(
-  <div>asdfasdf</div>,
+  <Counter/>,
   document.getElementById('root')
 )
