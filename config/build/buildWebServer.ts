@@ -5,5 +5,6 @@ export const buildWebServer = ({port}: BuildOptions): DevServerConfiguration => 
   return {
     port,
     open: true,
+    historyApiFallback: true,
   }
 }
