@@ -1,3 +1,4 @@
+import classNames from "classnames"
 import { Suspense } from "react"
 import { Link, Route, Routes } from "react-router-dom"
 import { AboutAsync } from "./pages/About"
@@ -9,9 +10,10 @@ import { useTheme } from "./theme/useTheme"
 
 export const App: React.FC = () => {
   const {theme, toggleTheme} = useTheme()
+  const appClassNames = classNames('app', theme)
 
   return (
-    <div className={`app ${theme}`}>
+    <div className={appClassNames}>
       <Link to={'/about'}>about</Link>
       <Link to={'/'}>main</Link>
       <button onClick={toggleTheme}>{theme}</button>
