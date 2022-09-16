@@ -2,11 +2,14 @@ import webpack from "webpack";
 
 export type BuildMode = webpack.Configuration['mode'];
 
-export interface BuildPaths {
-  entry: string;
-  build: string;
-  html: string;
+enum PathsEnum {
+  'entry',  
+  'build', 
+  'html',
+  'src',
 }
+
+export type BuildPaths = Record<keyof typeof PathsEnum, string>
 
 export interface BuildOptions {
   mode: BuildMode;

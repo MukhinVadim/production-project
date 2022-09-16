@@ -1,12 +1,10 @@
 import classNames from "classnames"
 import { Suspense } from "react"
 import { Link, Route, Routes } from "react-router-dom"
-import { AboutAsync } from "./pages/About"
-import { MainAsync } from "./pages/Main"
+import { AboutAsync } from "pages/AboutPage"
+import { MainAsync } from "pages/MainPage"
 import './styles/index.scss'
-import { useTheme } from "./theme/useTheme"
-
-
+import { useTheme } from "app/providers/ThemeProvider"
 
 export const App: React.FC = () => {
   const {theme, toggleTheme} = useTheme()
