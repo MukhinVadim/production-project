@@ -1,0 +1,14 @@
+.Navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 20px;
+}
+
+.links {
+  display: flex;
+  column-gap: 10px;
+  margin-left: auto;
+}
