@@ -1,3 +1,1 @@
-import { lazy } from "react";
-
-export const AboutAsync = lazy(() => import('./ui/AboutPage'))
+export {AboutAsync as AboutPage} from './ui/AboutPageAsync'

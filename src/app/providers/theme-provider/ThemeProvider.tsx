@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react"
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "../lib/ThemeContext";
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
 
 type ThemeProviderProps = {
   children: ReactNode;

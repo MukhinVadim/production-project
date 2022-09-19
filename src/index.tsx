@@ -1,4 +1,4 @@
-import { ThemeProvider } from './app/providers/ThemeProvider';
+import { ThemeProvider } from './app/providers/theme-provider';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from "./app/App";
