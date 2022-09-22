@@ -8,7 +8,12 @@
   --font-size-l: 24px;
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-
   // sizes
   --navbar-height: 60px;
+
+  //colors
+  --white: #fff;
+  --white-200: rgba(255, 255, 255, 0.08);
+  --gray-200: #E2E8F0;
+  --gray-400: #A0AEC0;
 }

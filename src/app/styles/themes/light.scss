@@ -1,7 +1,8 @@
 .app.light {
-  --bg-color: #FFFF;
+  --bg-color: var(--white);
   --primary-color: #319795;
   --secondary-color: #A0AEC0;
   --text-color: #2D3748;
-  --border-color: #E2E8F0;
+  --border-color: var(--gray-200);
+  --bg-hover: var(--gray-200);
 }
