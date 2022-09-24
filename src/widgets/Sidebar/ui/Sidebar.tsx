@@ -1,5 +1,7 @@
 import classNames from "classnames"
+import { LangSwitcher } from "features/lang/ui/LangSwitcher"
 import { useToggle } from "shared/lib/hooks/useToggle"
+import { Button } from "shared/ui/Button"
 import cls from './Sidebar.module.scss'
 
 type SidebarProps = {
@@ -13,12 +15,12 @@ export const Sidebar: React.FC<SidebarProps> = ({className}) => {
     <div className={classNames(cls.Sidebar, className, {
       [cls.collapsed]: collapsed
     })}>
-      <button onClick={toggleCollapse}>
+      <Button onClick={toggleCollapse}>
         toggle
-      </button>
-      {/* <div className={cls.switchers}>
-
-      </div> */}
+      </Button>
+      <div className={cls.switchers}>
+        <LangSwitcher/>
+      </div>
     </div>
   )
 }

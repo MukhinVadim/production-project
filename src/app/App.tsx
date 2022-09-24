@@ -4,6 +4,8 @@ import classNames from "classnames"
 import { Navbar } from "widgets/Navbar"
 import './styles/index.scss'
 import { Sidebar } from "widgets/Sidebar"
+import { Suspense } from "react"
+import { useTranslation } from "react-i18next"
 
 export const App: React.FC = () => {
   const {theme} = useTheme()
@@ -11,11 +13,13 @@ export const App: React.FC = () => {
 
   return (
     <div className={appClassNames}>
-      <Navbar/>
-      <div className="content-page">
-        <Sidebar/>
-        <AppRouter/>
-      </div>
+      <Suspense fallback="">
+        <Navbar/>
+        <div className="content-page">
+          <Sidebar/>
+          <AppRouter/>
+        </div>
+      </Suspense>
     </div>
   ) 
 }
