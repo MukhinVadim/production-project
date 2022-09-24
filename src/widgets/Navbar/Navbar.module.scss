@@ -3,10 +3,10 @@
   height: var(--navbar-height);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: var(--border-primary);
   padding: 10px 20px;
+  column-gap: 10px;
 }
-
 .links {
   display: flex;
   column-gap: 10px;

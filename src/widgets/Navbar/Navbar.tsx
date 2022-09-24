@@ -9,12 +9,12 @@ type NavbarProps = {
 
 export const Navbar: React.FC<NavbarProps> = ({className}) => {
   return (
-    <div className={classNames(cls.Navbar, className)}>
-      <ThemeSwitcher/>
+    <header className={classNames(cls.Navbar, className)}>
       <div className={cls.links}>
         <AppLink to={'/about'}>about</AppLink>
         <AppLink to={'/'}>main</AppLink>
       </div>
-    </div>
+      <ThemeSwitcher/>
+    </header>
   )
 }

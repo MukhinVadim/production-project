@@ -1,0 +1,20 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width);
+  border-right: var(--border-primary);
+  position: relative;
+  transition: width 0.3s;
+  padding: 10px 20px;
+}
+
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.switchers {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
