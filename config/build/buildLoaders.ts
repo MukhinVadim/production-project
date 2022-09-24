@@ -4,6 +4,19 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
+  const babelLoader = {
+    test: /\.[jt]sx?$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: require.resolve('babel-loader'),
+        options: {
+          plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+        },
+      },
+    ],
+  }
+
   const svgrLoader = {
     test: /\.svg$/i,
     issuer: /\.[jt]sx?$/,
@@ -47,6 +60,7 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
 
   return [
+    babelLoader,
     typescriptLoader,
     cssLoader,
     scssLoader,
