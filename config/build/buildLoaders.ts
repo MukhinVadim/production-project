@@ -5,13 +5,16 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
 
   const babelLoader = {
-    test: /\.[jt]sx?$/,
+    test: /\.(js|jsx|tsx)$/,
     exclude: /node_modules/,
     use: [
       {
-        loader: require.resolve('babel-loader'),
+        loader: 'babel-loader',
         options: {
-          plugins: [isDev && require.resolve('react-refresh/babel')].filter(Boolean),
+          presets: ['@babel/preset-env'],
+          plugins: [
+            [isDev && 'react-refresh/babel'].filter(Boolean),
+          ].filter(arr => arr.length),
         },
       },
     ],
