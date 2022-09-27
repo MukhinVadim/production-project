@@ -1,4 +1,3 @@
-
 import 'react-i18next';
 import translation from '../../../public/locales/ru/translation.json';
 import about from '../../../public/locales/ru/about.json';
