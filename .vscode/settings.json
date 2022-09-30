@@ -4,5 +4,12 @@
     "public/locales",
     "src/features/lang"
   ],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "stylelint.config": null,
+  "stylelint.configFile": "/Users/mukhinvadim/TutorialCode/production-project/.stylelintrc",
+  "stylelint.stylelintPath": "/Users/mukhinvadim/TutorialCode/production-project/node_modules/stylelint",
+  "stylelint.validate": ["css", "scss"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
 }
