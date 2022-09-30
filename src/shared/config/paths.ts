@@ -1,9 +1,5 @@
 export enum AppRoutes {
-  MAIN = 'main',
-  ABOUT = 'about'
+  MAIN = '/',
+  ABOUT = '/about',
+  NOT_FOUND='*'
 }
-
-export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about',
-};

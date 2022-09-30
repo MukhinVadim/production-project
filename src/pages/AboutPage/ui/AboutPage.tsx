@@ -5,7 +5,9 @@ const AboutPage: React.FC = () => {
   const { t } = useTranslation('about');
 
   return (
-    <div>{t('about')}</div>
+    <div>
+      {t('about')}
+    </div>
   );
 };
 

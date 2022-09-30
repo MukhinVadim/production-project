@@ -28,6 +28,7 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',
     'react/function-component-definition': 'off',
+    'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
     'import/prefer-default-export': 'off',
     'import/no-unresolved': 'off',
@@ -51,5 +52,6 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: 'writable',
+    React: 'readable',
   },
 };
