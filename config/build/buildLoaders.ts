@@ -10,7 +10,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env'],
+          presets: [
+            '@babel/preset-env',
+            '@babel/preset-typescript',
+          ],
           plugins: [
             [isDev && 'react-refresh/babel'].filter(Boolean),
           ].filter((arr) => arr.length),

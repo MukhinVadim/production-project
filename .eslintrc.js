@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: [
     'plugin:@typescript-eslint/recommended',
@@ -31,7 +32,13 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['webpack.config.ts', 'config/**'] }],
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: [
+        'webpack.config.ts',
+        'config/**',
+        '**/*.test.ts',
+      ],
+    }],
     'no-shadow': 'off',
     'no-unused-vars': ['warn', {
       argsIgnorePattern: '^_',
@@ -40,6 +47,7 @@ module.exports = {
       caughtErrors: 'all',
     }],
     'no-underscore-dangle': 'off',
+    'max-len': ['error', { ignoreComments: true, code: 100 }],
   },
   globals: {
     __IS_DEV__: 'writable',
