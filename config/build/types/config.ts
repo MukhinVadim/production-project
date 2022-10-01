@@ -1,10 +1,10 @@
-import webpack from "webpack";
+import webpack from 'webpack';
 
 export type BuildMode = webpack.Configuration['mode'];
 
 enum PathsEnum {
-  'entry',  
-  'build', 
+  'entry',
+  'build',
   'html',
   'src',
 }
@@ -16,9 +16,11 @@ export interface BuildOptions {
   paths: BuildPaths;
   isDev: boolean;
   port: number;
+  analyze: boolean;
 }
 
 export interface BuildEnv {
   mode: BuildMode;
   port: number;
+  analyze: boolean;
 }

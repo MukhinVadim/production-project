@@ -19,6 +19,7 @@ export default (env: BuildEnv): webpack.Configuration => {
     mode: env.mode,
     paths,
     isDev,
+    analyze: env.analyze,
     port: PORT,
   });
 };
