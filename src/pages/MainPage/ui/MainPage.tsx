@@ -1,11 +1,27 @@
 import { useTranslation } from 'react-i18next';
 import React from 'react';
+import { Button } from 'shared/ui/Button';
+import { useToggle } from 'shared/lib/hooks/useToggle';
 
 const MainPage: React.FC = () => {
   const { t } = useTranslation('main');
+  const [toggle, setToggle] = useToggle();
+
+  if (toggle) {
+    throw new Error('boom');
+  }
 
   return (
-    <div>{t('main')}</div>
+    <div>
+      {t('main')}
+      {' '}
+      <Button
+        onClick={setToggle}
+      >
+        boom
+      </Button>
+
+    </div>
   );
 };
 

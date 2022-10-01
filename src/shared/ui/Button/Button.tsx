@@ -4,7 +4,7 @@ import cls from './Button.module.scss';
 
 type ButtonProps = {
     className?: string;
-    children: ReactNode;
+    children?: ReactNode;
 } & React.ComponentProps<'button'>
 
 export const Button: React.FC<ButtonProps> = (props) => {
