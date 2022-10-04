@@ -13,6 +13,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
           presets: [
             '@babel/preset-env',
             '@babel/preset-typescript',
+            '@babel/preset-react',
           ],
           plugins: [
             [isDev && 'react-refresh/babel'].filter(Boolean),

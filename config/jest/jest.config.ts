@@ -7,15 +7,12 @@
 export default {
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
-
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
-
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
     'node_modules',
   ],
-
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
@@ -27,21 +24,34 @@ export default {
     'json',
     'node',
   ],
-
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: [
     '/node_modules/',
   ],
-
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
-
   // The glob patterns Jest uses to detect test files
   testMatch: [
     '**/__tests__/**/*.[jt]s?(x)',
     '**/?(*.)+(spec|test).[tj]s?(x)',
   ],
-
+  modulePaths: [
+    '<rootDir>',
+    '<rootDir>src',
+  ],
+  roots: [
+    '<rootDir>',
+  ],
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+  transform: {
+    '\\.[jt]sx?$': 'babel-jest',
+  },
+  moduleNameMapper: {
+    '^@config(.*)$': '<rootDir>/config$1',
+    '\\.(svg)$':
+      '<rootDir>/config/jest/__mocks__/jestEmptyComponent.tsx',
+    '\\.(css|scss)$': 'identity-obj-proxy',
+  },
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -130,11 +140,6 @@ export default {
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,
 
-  // A list of paths to directories that Jest should use to search for files in
-  // roots: [
-  //   "<rootDir>"
-  // ],
-
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
 
@@ -169,9 +174,6 @@ export default {
 
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
-
-  // A map from regular expressions to paths to transformers
-  // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [

@@ -12,6 +12,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
+      "@config/*": ["./config/*"], 
       "*": ["./src/*"]
     },
     
@@ -21,5 +22,11 @@
       "module": "CommonJS",
       "plugins": [{ "name": "typescript-plugin-css-modules" }]
     }
-  }
+  },
+  "include": [
+    "./config/jest/i18n/*",
+    "./config/jest/jest-setup.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ]
 }

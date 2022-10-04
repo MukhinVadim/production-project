@@ -42,7 +42,7 @@ module.exports = {
       devDependencies: [
         'webpack.config.ts',
         'config/**',
-        '**/*.test.ts',
+        '**/*.test.{ts,tsx}',
       ],
     }],
     'no-shadow': 'off',
