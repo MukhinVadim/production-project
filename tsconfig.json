@@ -24,7 +24,7 @@
     }
   },
   "include": [
-    "./config/jest/i18n/*",
+    "src/shared/lib/i18n/*",
     "./config/jest/jest-setup.ts",
     "./src/**/*.tsx",
     "./src/**/*.ts"

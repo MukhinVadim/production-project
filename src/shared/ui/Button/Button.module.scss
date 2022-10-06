@@ -6,17 +6,32 @@
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
-  color: var(--text-color);
-
-  &:hover {
-    background-color: var(--bg-hover);
-  }
+  color: var(--primary-color);
+  padding: 0 16px;
 }
 
 .reset {
   margin: 0;
-  padding: 0;
   border: none;
   outline: none;
   background: none;
+}
+
+.ghost {
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}
+
+.outline {
+  border: 1px solid currentcolor;
+
+  &:hover {
+    background-color: var(--primary-hover);
+  }
+}
+
+.solid {
+  color: var(--bg-color);
+  background-color: var(--primary-color);
 }

@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import cls from './Spinner.module.scss';
 
 type SpinnerProps = {

@@ -9,7 +9,7 @@ export function buildPlugins({
   paths,
   isDev,
   analyze,
-}: BuildOptions): webpack.WebpackPluginInstance[] {
+}: BuildOptions) {
   return [
     new HTMLWebpackPlugin({
       template: paths.html,
@@ -25,5 +25,5 @@ export function buildPlugins({
     new webpack.HotModuleReplacementPlugin(),
     analyze && new BundleAnalyzerPlugin(),
     isDev && new ReactRefreshWebpackPlugin(),
-  ].filter(Boolean);
+  ].filter(Boolean) as webpack.WebpackPluginInstance[];
 }

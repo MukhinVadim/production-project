@@ -1,10 +1,10 @@
 .app.dark {
   --bg-color: #1a202c;
-  --primary-color: #319795;
-  --secondary-color: #b8baba;
+  --primary-color: var(--teal-200);
+  --primary-hover: rgb(129 230 217 / 12%);
+  --secondary-color: var(--gray-400);
   --text-color: #edf2f7;
   --border-color: #141636;
-  --bg-hover: var(--white-200);
   --border-primary: 1px solid var(--gray-600);
   --spinner-color: var(--white);
 }

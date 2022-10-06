@@ -8,6 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:i18next/recommended',
+    'plugin:storybook/recommended',
     'airbnb',
   ],
   parser: '@typescript-eslint/parser',
@@ -15,12 +16,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': ['error', {
+      extensions: ['.js', '.jsx', '.tsx'],
+    }],
     'react/jsx-props-no-spreading': ['warn', {
       html: 'ignore',
       exceptions: ['NavLink'],
@@ -43,12 +43,16 @@ module.exports = {
         'webpack.config.ts',
         'config/**',
         '**/*.test.{ts,tsx}',
+        '**/*.stories.{ts,tsx}',
       ],
     }],
     'no-shadow': 'off',
     'no-unused-vars': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'max-len': ['error', {
+      ignoreComments: true,
+      code: 100,
+    }],
   },
   globals: {
     __IS_DEV__: 'writable',
