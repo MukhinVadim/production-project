@@ -53,6 +53,39 @@ jobs:
       - name: Run lint
         run: |
           yarn lint
+      - name: Run style-lint
+        run: |
+          yarn stylelint
+  build-storybook:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    needs: install-cache
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Restore yarn dependencies
+        uses: actions/cache@v2
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Run test
+        run: |
+          yarn sb:build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: storybook-static
+          path: storybook-static
+          retention-days: 1
   unit-test:
     runs-on: ubuntu-latest
     strategy:
@@ -77,12 +110,41 @@ jobs:
       - name: Run test
         run: |
           yarn test:unit
+  ui-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    needs: [install-cache, build-storybook]
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Restore yarn dependencies
+        uses: actions/cache@v2
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Download build artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: storybook-static
+          path: storybook-static
+      - name: Run test
+        run: |
+          yarn test:ui:ci
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 17.x ]
-    needs: [lint-format, unit-test]
+    needs: [lint-format, unit-test, ui-tests]
     steps:
       - name: Checkout Commit
         uses: actions/checkout@v2
