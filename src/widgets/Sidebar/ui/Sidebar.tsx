@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import classNames from 'classnames';
 import { LangSwitcher } from 'features/lang/ui/LangSwitcher';
 import { useToggle } from 'shared/lib/hooks/useToggle';
