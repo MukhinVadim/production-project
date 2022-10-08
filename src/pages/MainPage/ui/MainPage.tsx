@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import React from 'react';
-import { Button } from 'shared/ui/buttons';
+import { Button } from 'shared/ui/Button';
 import { useToggle } from 'shared/lib/hooks/useToggle';
 
 const MainPage: React.FC = () => {

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { LangSwitcher } from 'features/lang/ui/LangSwitcher';
 import React from 'react';
 import { useToggle } from 'shared/lib/hooks/useToggle';
-import { IconButton } from 'shared/ui/buttons';
+import { Button } from 'shared/ui/Button';
 import ArrowLeftIcon from 'shared/ui/icons/arrowLeftIcon.svg';
 import cls from './Sidebar.module.scss';
 
@@ -22,17 +22,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       data-testid="sidebar"
     >
       <div className={cls.sidebarToggle}>
-        <IconButton
+        <Button
           onClick={toggleCollapse}
           variant="outline"
-          icon={(
-            <ArrowLeftIcon
-              width={20}
-              height={20}
-              className={classNames(cls.icon, { [cls.iconCollapsed]: collapsed })}
-            />
-)}
-        />
+          onlyIcon
+        >
+          <ArrowLeftIcon
+            width={20}
+            height={20}
+            className={classNames(cls.icon, { [cls.iconCollapsed]: collapsed })}
+          />
+        </Button>
       </div>
       <div className={cls.switchers}>
         <LangSwitcher isCollapsed={collapsed} />

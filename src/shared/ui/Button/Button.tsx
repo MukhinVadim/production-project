@@ -1,13 +1,19 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
-import { ButtonVariant } from '../types';
 import cls from './Button.module.scss';
+
+enum ButtonVariant {
+  'outline',
+  'ghost',
+  'solid'
+}
 
 type ButtonProps = {
     className?: string;
     children?: ReactNode;
     variant?: keyof typeof ButtonVariant;
     fullWidth?: boolean;
+    onlyIcon?: boolean;
 } & React.ComponentProps<'button'>
 
 export const Button: React.FC<ButtonProps> = (props) => {
@@ -16,6 +22,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     children,
     variant = 'solid',
     fullWidth,
+    onlyIcon,
     ...restProps
   } = props;
 
@@ -26,6 +33,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
     className,
     {
       [cls.fullWidth]: fullWidth,
+      [cls.onlyIcon]: onlyIcon,
     },
   );
 

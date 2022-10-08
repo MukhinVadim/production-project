@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { ThemeSwitcher } from 'features/theme';
 import { useTranslation } from 'react-i18next';
-import { AppLink } from 'shared/ui/app-link';
+import { AppLink } from 'shared/ui/AppLink';
 import React from 'react';
 import cls from './Navbar.module.scss';
 
