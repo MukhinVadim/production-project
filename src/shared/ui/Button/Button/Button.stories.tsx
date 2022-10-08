@@ -1,6 +1,6 @@
 // Button.stories.ts|tsx
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Button, ButtonVariant } from './Button';
+import { Button } from './Button';
 
 export default {
   title: 'UI/Button',
@@ -14,5 +14,4 @@ export const Default = Template.bind({});
 
 Default.args = {
   children: 'Button',
-  variant: ButtonVariant.SOLID,
 };

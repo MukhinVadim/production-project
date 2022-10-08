@@ -23,7 +23,11 @@ module.exports = {
     }],
     'react/jsx-props-no-spreading': ['warn', {
       html: 'ignore',
-      exceptions: ['NavLink'],
+      exceptions: [
+        'NavLink',
+        'Button',
+        'IconButton',
+      ],
     }],
     'react/react-in-jsx-scope': 'off',
     'react/require-default-props': 'off',

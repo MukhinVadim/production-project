@@ -1,10 +1,9 @@
-import { Theme, useTheme } from 'shared/lib/theme-provider';
 import classNames from 'classnames';
-import { Button, ButtonVariant } from 'shared/ui/Button';
-import Sun from 'shared/ui/icons/sun.svg';
-import Moon from 'shared/ui/icons/moon.svg';
 import React from 'react';
-import cls from './ThemeSwitcher.module.scss';
+import { Theme, useTheme } from 'shared/lib/theme-provider';
+import { ButtonVariant, IconButton } from 'shared/ui/button';
+import Moon from 'shared/ui/icons/moon.svg';
+import Sun from 'shared/ui/icons/sun.svg';
 
 type ThemeSwitcherProps = {
     className?: string;
@@ -14,12 +13,11 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <Button
-      className={classNames(cls.ThemeSwitcher, className)}
+    <IconButton
+      className={classNames(className)}
       onClick={toggleTheme}
       variant={ButtonVariant.GHOST}
-    >
-      {theme === Theme.LIGHT ? <Sun /> : <Moon />}
-    </Button>
+      icon={theme === Theme.LIGHT ? <Sun /> : <Moon />}
+    />
   );
 };

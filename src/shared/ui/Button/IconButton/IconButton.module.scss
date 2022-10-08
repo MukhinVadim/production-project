@@ -1,13 +1,13 @@
-.Button {
+.IconButton {
   display: flex;
   height: 40px;
+  width: 40px;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
   color: var(--primary-color);
-  padding: 0 16px;
 }
 
 .reset {

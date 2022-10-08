@@ -6,7 +6,20 @@
   border-right: var(--border-primary);
   position: relative;
   transition: width 0.3s;
-  padding: 10px 20px;
+  padding: 10px;
+}
+
+.sidebarToggle {
+  display: flex;
+  justify-content: end;
+}
+
+.icon {
+  transition: transform 0.3s;
+}
+
+.iconCollapsed {
+  transform: rotate(180deg);
 }
 
 .collapsed {

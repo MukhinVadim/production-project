@@ -2,5 +2,6 @@
   "language": "Русский",
   "pageNotFound": "Страница не найдена",
   "somethingWentWrong": "Что то пошло не так...",
-  "reload": "Перезагрузить страницу"
+  "reload": "Перезагрузить страницу",
+  "languageCollapsed": "РУС"
 }

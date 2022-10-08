@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Spinner } from 'shared/ui/Spinner';
+import { Spinner } from 'shared/ui/spinner';
 import cls from './PagePreloader.module.scss';
 
 type PagePreloaderProps = {
