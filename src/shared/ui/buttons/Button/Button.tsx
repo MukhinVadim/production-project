@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import React, { ReactNode } from 'react';
-import { ButtonVariant } from 'shared/ui/button/types';
+import { ButtonVariant } from '../types';
 import cls from './Button.module.scss';
 
 type ButtonProps = {
     className?: string;
     children?: ReactNode;
-    variant?: ButtonVariant;
+    variant?: keyof typeof ButtonVariant;
     fullWidth?: boolean;
 } & React.ComponentProps<'button'>
 
@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   const {
     className,
     children,
-    variant = ButtonVariant.SOLID,
+    variant = 'solid',
     fullWidth,
     ...restProps
   } = props;

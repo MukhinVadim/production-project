@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { LangSwitcher } from 'features/lang/ui/LangSwitcher';
 import React from 'react';
 import { useToggle } from 'shared/lib/hooks/useToggle';
-import { ButtonVariant, IconButton } from 'shared/ui/button';
+import { IconButton } from 'shared/ui/buttons';
 import ArrowLeftIcon from 'shared/ui/icons/arrowLeftIcon.svg';
 import cls from './Sidebar.module.scss';
 
@@ -24,7 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       <div className={cls.sidebarToggle}>
         <IconButton
           onClick={toggleCollapse}
-          variant={ButtonVariant.OUTLINE}
+          variant="outline"
           icon={(
             <ArrowLeftIcon
               width={20}

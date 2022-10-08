@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import React, { ReactElement } from 'react';
-import { ButtonVariant } from 'shared/ui/button/types';
+import { ButtonVariant } from '../types';
 import cls from './IconButton.module.scss';
 
 type IconButtonProps = {
   icon: ReactElement;
   className?: string;
-  variant?: ButtonVariant;
+  variant?: keyof typeof ButtonVariant;
 } & React.ComponentProps<'button'>
 
 export const IconButton: React.FC<IconButtonProps> = (props) => {
@@ -14,7 +14,7 @@ export const IconButton: React.FC<IconButtonProps> = (props) => {
     className,
     children,
     icon,
-    variant = ButtonVariant.SOLID,
+    variant = 'solid',
     ...restProps
   } = props;
 

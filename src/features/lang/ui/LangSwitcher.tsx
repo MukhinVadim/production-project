@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariant } from 'shared/ui/button';
+import { Button } from 'shared/ui/buttons';
 
 type LangSwitcherProps = {
     className?: string;
@@ -18,7 +18,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = ({ className, isCollaps
     <Button
       className={className}
       onClick={toggle}
-      variant={ButtonVariant.OUTLINE}
+      variant="outline"
       fullWidth
     >
       {isCollapsed ? t('languageCollapsed') : t('language')}

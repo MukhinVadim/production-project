@@ -9,16 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12]
+        node-version: [ 17.x ]
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Cache yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
@@ -37,13 +37,13 @@ jobs:
     needs: install-cache
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Restore yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
@@ -64,13 +64,13 @@ jobs:
     needs: install-cache
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Restore yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
@@ -81,7 +81,7 @@ jobs:
         run: |
           yarn sb:build
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: storybook-static
           path: storybook-static
@@ -94,13 +94,13 @@ jobs:
     needs: install-cache
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Restore yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
@@ -109,7 +109,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: Run test
         run: |
-          yarn test:unit
+          yarn test:unit --ci
   ui-tests:
     runs-on: ubuntu-latest
     strategy:
@@ -118,13 +118,13 @@ jobs:
     needs: [install-cache, build-storybook]
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Restore yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
@@ -132,7 +132,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Download build artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: storybook-static
           path: storybook-static
@@ -147,13 +147,13 @@ jobs:
     needs: [lint-format, unit-test, ui-tests]
     steps:
       - name: Checkout Commit
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - name: Restore yarn dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         id: cache-dependencies
         with:
           path: node_modules
