@@ -11,4 +11,14 @@ describe('Button', () => {
     render(<Button>TEST</Button>);
     expect(screen.getByText('TEST')).toHaveClass('reset');
   });
+
+  test('Test ghost variant', () => {
+    render(<Button variant="ghost">TEST</Button>);
+    expect(screen.getByText('TEST')).toHaveClass('ghost');
+  });
+
+  test('Test solid variant', () => {
+    render(<Button variant="solid">TEST</Button>);
+    expect(screen.getByText('TEST')).toHaveClass('solid');
+  });
 });
