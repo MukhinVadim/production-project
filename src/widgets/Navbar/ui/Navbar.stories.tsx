@@ -6,4 +6,6 @@ export default {
   component: Navbar,
 } as ComponentMeta<typeof Navbar>;
 
-export const Default: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+export const Default: ComponentStory<typeof Navbar> = (args) => (
+  <Navbar {...args} />
+);

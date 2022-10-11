@@ -11,7 +11,9 @@ export default {
 } as ComponentMeta<typeof AppLink>;
 
 // 👇 We create a “template” of how args map to rendering
-const Template: ComponentStory<typeof AppLink> = (args) => (<AppLink {...args} />);
+const Template: ComponentStory<typeof AppLink> = (args) => (
+  <AppLink {...args} />
+);
 
 export const Default = Template.bind({});
 

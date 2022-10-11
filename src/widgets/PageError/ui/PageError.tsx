@@ -4,8 +4,8 @@ import { Button } from 'shared/ui/Button';
 import cls from './PageError.module.scss';
 
 type PageErrorProps = {
-    className?: string;
-}
+  className?: string;
+};
 
 export const PageError: React.FC<PageErrorProps> = ({ className }) => {
   const { t } = useTranslation('translation');
@@ -17,9 +17,7 @@ export const PageError: React.FC<PageErrorProps> = ({ className }) => {
   return (
     <div className={classNames(cls.PageError, className)}>
       {t('somethingWentWrong')}
-      <Button onClick={onReload}>
-        {t('reload')}
-      </Button>
+      <Button onClick={onReload}>{t('reload')}</Button>
     </div>
   );
 };

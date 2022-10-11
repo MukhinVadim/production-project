@@ -1,7 +1,9 @@
 import { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import { BuildOptions } from './types/config';
 
-export const buildWebServer = ({ port }: BuildOptions): DevServerConfiguration => ({
+export const buildWebServer = ({
+  port,
+}: BuildOptions): DevServerConfiguration => ({
   port,
   open: true,
   historyApiFallback: true,

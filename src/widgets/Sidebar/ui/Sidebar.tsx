@@ -8,8 +8,8 @@ import ArrowLeftIcon from 'shared/ui/icons/arrowLeftIcon.svg';
 import cls from './Sidebar.module.scss';
 
 type SidebarProps = {
-    className?: string;
-}
+  className?: string;
+};
 
 export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
   const [collapsed, toggleCollapse] = useToggle();
@@ -22,11 +22,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
       data-testid="sidebar"
     >
       <div className={cls.sidebarToggle}>
-        <Button
-          onClick={toggleCollapse}
-          variant="outline"
-          onlyIcon
-        >
+        <Button onClick={toggleCollapse} variant="outline" onlyIcon>
           <ArrowLeftIcon
             width={20}
             height={20}

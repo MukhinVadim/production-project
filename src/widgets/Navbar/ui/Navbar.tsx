@@ -6,17 +6,14 @@ import React from 'react';
 import cls from './Navbar.module.scss';
 
 type NavbarProps = {
-    className?: string;
-}
+  className?: string;
+};
 
 export const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const { t } = useTranslation(['about', 'main']);
 
   return (
-    <header
-      className={classNames(cls.Navbar, className)}
-      data-testid="navbar"
-    >
+    <header className={classNames(cls.Navbar, className)} data-testid="navbar">
       <div className={cls.links}>
         <AppLink to="/about">{t('about:about')}</AppLink>
         <AppLink to="/">{t('main:main')}</AppLink>

@@ -15,9 +15,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             '@babel/preset-typescript',
             '@babel/preset-react',
           ],
-          plugins: [
-            [isDev && 'react-refresh/babel'].filter(Boolean),
-          ].filter((arr) => arr.length),
+          plugins: [[isDev && 'react-refresh/babel'].filter(Boolean)].filter(
+            (arr) => arr.length
+          ),
         },
       },
     ],
@@ -56,7 +56,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         options: {
           modules: {
             auto: /\.module\.\w+$/i,
-            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
+            localIdentName: isDev
+              ? '[path][name]__[local]--[hash:base64:5]'
+              : '[hash:base64:8]',
           },
         },
       },

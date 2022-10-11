@@ -3,7 +3,7 @@ declare module '*.scss' {
   export default content;
 }
 
-declare module '*.svg?url'
+declare module '*.svg?url';
 declare module '*.svg' {
   import React from 'react';
 

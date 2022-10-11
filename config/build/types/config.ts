@@ -9,7 +9,7 @@ enum PathsEnum {
   'src',
 }
 
-export type BuildPaths = Record<keyof typeof PathsEnum, string>
+export type BuildPaths = Record<keyof typeof PathsEnum, string>;
 
 export interface BuildOptions {
   mode: BuildMode;

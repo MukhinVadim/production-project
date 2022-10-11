@@ -10,10 +10,7 @@ export default {
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    'node_modules',
-    'src',
-  ],
+  moduleDirectories: ['node_modules', 'src'],
   // An array of file extensions your modules use
   moduleFileExtensions: [
     'js',
@@ -26,32 +23,20 @@ export default {
     'node',
   ],
   // An array of regexp pattern strings used to skip coverage collection
-  coveragePathIgnorePatterns: [
-    '/node_modules/',
-  ],
+  coveragePathIgnorePatterns: ['/node_modules/'],
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    '**/__tests__/**/*.[jt]s?(x)',
-    '**/?(*.)+(spec|test).[tj]s?(x)',
-  ],
-  modulePaths: [
-    '<rootDir>',
-    '<rootDir>src',
-  ],
-  roots: [
-    '<rootDir>',
-    '<rootDir>src',
-  ],
+  testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+  modulePaths: ['<rootDir>', '<rootDir>src'],
+  roots: ['<rootDir>', '<rootDir>src'],
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
   },
   moduleNameMapper: {
     '^@config(.*)$': '<rootDir>/config$1',
-    '\\.(svg)$':
-      '<rootDir>/config/jest/__mocks__/jestEmptyComponent.tsx',
+    '\\.(svg)$': '<rootDir>/config/jest/__mocks__/jestEmptyComponent.tsx',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   // All imported modules in your tests should be mocked automatically

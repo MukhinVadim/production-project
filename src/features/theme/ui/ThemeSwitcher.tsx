@@ -6,8 +6,8 @@ import Moon from 'shared/ui/icons/moon.svg';
 import Sun from 'shared/ui/icons/sun.svg';
 
 type ThemeSwitcherProps = {
-    className?: string;
-}
+  className?: string;
+};
 
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
   const { theme, toggleTheme } = useTheme();
