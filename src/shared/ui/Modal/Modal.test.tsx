@@ -23,4 +23,22 @@ describe('Modal', () => {
     fireEvent.click(overlay);
     expect(onClose).toHaveBeenCalled();
   });
+
+  test('Escape keydown calls the onClose callback', () => {
+    const onClose = jest.fn();
+    render(
+      <Modal isOpen onClose={onClose}>
+        Test
+      </Modal>
+    );
+
+    fireEvent.keyDown(document, {
+      key: 'Escape',
+      code: 'Escape',
+      keyCode: 27,
+      charCode: 27,
+    });
+
+    expect(onClose).toHaveBeenCalled();
+  });
 });

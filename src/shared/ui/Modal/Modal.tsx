@@ -1,66 +1,70 @@
 import classNames from 'classnames';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import { useModal } from 'shared/ui/Modal/useModal';
 import { Portal } from 'shared/ui/Portal';
 import cls from './Modal.module.scss';
 
 export type ModalProps = {
   children: ReactNode;
-  isOpen: boolean;
   onClose: () => void;
+  isOpen?: boolean;
   className?: string;
 };
 
 export const Modal: React.FC<ModalProps> = ({
   children,
-  isOpen,
+  isOpen = true,
   className,
   onClose,
-}) => (
-  <AnimatePresence>
-    {isOpen && (
-      <Portal>
-        {/* //TODO: decompose to Overlay component */}
-        <motion.div
-          className={cls.overlay}
-          initial={{
-            opacity: 0,
-            backdropFilter: 'blur(0px)',
-          }}
-          animate={{
-            opacity: 1,
-            backdropFilter: 'blur(5px)',
-          }}
-          exit={{
-            opacity: 0,
-            backdropFilter: 'blur(0px)',
-          }}
-          onClick={onClose}
-          tabIndex={0}
-          data-testid="overlay"
-        >
-          <motion.section
-            className={classNames(cls.Modal, className)}
+}) => {
+  const { onOverlayClick, onContentClick } = useModal({ onClose, isOpen });
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <Portal>
+          {/* //TODO: decompose to Overlay component */}
+          <motion.div
+            className={cls.overlay}
             initial={{
               opacity: 0,
-              y: 50,
+              backdropFilter: 'blur(0px)',
             }}
             animate={{
               opacity: 1,
-              y: 0,
+              backdropFilter: 'blur(5px)',
             }}
             exit={{
               opacity: 0,
-              y: 50,
+              backdropFilter: 'blur(0px)',
             }}
-            onClick={(e) => e.stopPropagation()}
-            role="dialog"
-            data-testid="modal"
+            onClick={onOverlayClick}
+            tabIndex={0}
+            data-testid="overlay"
           >
-            {children}
-          </motion.section>
-        </motion.div>
-      </Portal>
-    )}
-  </AnimatePresence>
-);
+            <motion.section
+              className={classNames(cls.Modal, className)}
+              initial={{
+                opacity: 0,
+                y: 50,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: 50,
+              }}
+              onClick={onContentClick}
+              role="dialog"
+              data-testid="modal"
+            >
+              {children}
+            </motion.section>
+          </motion.div>
+        </Portal>
+      )}
+    </AnimatePresence>
+  );
+};
