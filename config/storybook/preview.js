@@ -1,9 +1,6 @@
-import React from 'react';
 import { withRouter } from 'storybook-addon-react-router-v6';
-import { withThemes } from 'storybook-addon-themes/react';
 import '../../src/app/styles/index.scss';
 import i18n from './i18n';
-import { ThemeProvider } from '../../src/shared/lib/theme-provider';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -15,13 +12,19 @@ export const parameters = {
   },
   themes: {
     default: 'light',
-    onChange: (theme) => { document.body.className = theme.class.replace(',', ' '); },
+    onChange: (theme) => {
+      document.body.className = theme.class.replace(',', ' ');
+    },
     list: [
       {
-        name: 'light', class: ['app', 'light_theme'], color: '#FFF',
+        name: 'light',
+        class: ['app', 'light_theme'],
+        color: '#FFF',
       },
       {
-        name: 'dark', class: ['app', 'dark_theme'], color: '#2d3748',
+        name: 'dark',
+        class: ['app', 'dark_theme'],
+        color: '#2d3748',
       },
     ],
   },
@@ -33,6 +36,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [
-  withRouter,
-];
+export const decorators = [withRouter];
