@@ -23,6 +23,7 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          retention-days: 7
           restore-keys: |
             ${{ runner.os }}-yarn-
       - name: Install Dependencies
@@ -56,7 +57,7 @@ jobs:
       - name: Run style-lint
         run: |
           yarn stylelint
-  build-storybook:
+  ui-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -86,6 +87,9 @@ jobs:
           name: storybook-static
           path: storybook-static
           retention-days: 1
+      - name: Run test
+        run: |
+          yarn test:ui:ci
   unit-test:
     runs-on: ubuntu-latest
     strategy:
@@ -110,35 +114,6 @@ jobs:
       - name: Run test
         run: |
           yarn test:unit --ci
-  ui-tests:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [ 17.x ]
-    needs: [install-cache, build-storybook]
-    steps:
-      - name: Checkout Commit
-        uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node }}
-      - name: Restore yarn dependencies
-        uses: actions/cache@v3
-        id: cache-dependencies
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: storybook-static
-          path: storybook-static
-      - name: Run test
-        run: |
-          yarn test:ui:ci
   build:
     runs-on: ubuntu-latest
     strategy:
