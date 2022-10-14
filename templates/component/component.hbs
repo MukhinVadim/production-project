@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import cls from './{{pascalCase name}}.module.scss';
 
 type {{pascalCase name}}Props = {
-
+  className?: string
 }
 
 export const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = (props) => {
-  const {} = props;
+  const { className } = props;
 
   return (
-    <div className={classNames(cls.{{pascalCase name}})} data-testid="{{kebabCase name}}">
+    <div className={classNames(cls.{{pascalCase name}}, className)} data-testid="{{kebabCase name}}">
       {{pascalCase name}}
     </div>
   );

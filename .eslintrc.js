@@ -30,7 +30,7 @@ module.exports = {
       'warn',
       {
         html: 'ignore',
-        exceptions: ['NavLink', 'Button', 'IconButton'],
+        exceptions: ['NavLink', 'Button', 'IconButton', 'Input'],
       },
     ],
     'react/react-in-jsx-scope': 'off',
@@ -78,8 +78,9 @@ module.exports = {
     ],
   },
   globals: {
-    __IS_DEV__: 'writable',
+    __IS_DEV__: 'readable',
     React: 'readable',
+    JSX: 'readable',
   },
   overrides: [
     {

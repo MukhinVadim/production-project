@@ -3,11 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import { useModal } from 'shared/ui/Modal/useModal';
 import { Portal } from 'shared/ui/Portal';
+import FocusLock from 'react-focus-lock';
 import cls from './Modal.module.scss';
 
 export type ModalProps = {
   children: ReactNode;
   onClose: () => void;
+  autoFocus?: boolean;
   isOpen?: boolean;
   className?: string;
 };
@@ -16,9 +18,11 @@ export const Modal: React.FC<ModalProps> = ({
   children,
   isOpen = true,
   className,
+  autoFocus,
   onClose,
 }) => {
   const { onOverlayClick, onContentClick } = useModal({ onClose, isOpen });
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -60,7 +64,7 @@ export const Modal: React.FC<ModalProps> = ({
               role="dialog"
               data-testid="modal"
             >
-              {children}
+              <FocusLock autoFocus={autoFocus}>{children}</FocusLock>
             </motion.section>
           </motion.div>
         </Portal>

@@ -3,5 +3,8 @@
   "pageNotFound": "Страница не найдена",
   "somethingWentWrong": "Что то пошло не так...",
   "reload": "Перезагрузить страницу",
-  "languageCollapsed": "РУС"
+  "languageCollapsed": "РУС",
+  "signIn": "Войти",
+  "login": "Логин",
+  "password": "Пароль"
 }

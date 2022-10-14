@@ -1,6 +1,6 @@
 .Modal {
   background-color: var(--bg-color);
-  border-radius: 15px;
+  border-radius: var(--border-radius-l);
   max-width: 500px;
   padding: 30px;
 }

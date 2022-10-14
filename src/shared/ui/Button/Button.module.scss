@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: var(--border-radius-s);
   transition: all 0.3s;
   color: var(--primary-color);
   padding: 0 16px;

@@ -3,8 +3,9 @@
   --primary-color: var(--teal-200);
   --primary-hover: rgb(129 230 217 / 12%);
   --secondary-color: var(--gray-400);
-  --text-color: #edf2f7;
-  --border-color: #141636;
+  --text-color-primary: var(--gray-100);
+  --text-color-secondary: var(--gray-600);
   --border-primary: 1px solid var(--gray-600);
   --spinner-color: var(--white);
+  --outline-color: var(--blue-200);
 }

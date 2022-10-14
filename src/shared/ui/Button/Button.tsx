@@ -38,7 +38,7 @@ export const Button: React.FC<ButtonProps> = (props) => {
   );
 
   return (
-    <button {...restProps} type="button" className={ownClassName}>
+    <button type="button" {...restProps} className={ownClassName}>
       {children}
     </button>
   );
