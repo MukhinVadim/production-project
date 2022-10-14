@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000 --env mode=development",
+    "server": "json-server --watch server/db.json -p 8000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development --env analyze=true",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
@@ -67,6 +68,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.1.2",
     "jest-environment-jsdom": "^29.1.2",
+    "json-server": "^0.17.0",
     "loki": "^0.30.3",
     "mini-css-extract-plugin": "^2.6.1",
     "react-refresh": "^0.14.0",
@@ -89,6 +91,7 @@
     "webpack-dev-server": "4.7.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.6",
     "classnames": "^2.3.2",
     "framer-motion": "^7.5.3",
     "i18next": "^21.9.2",
@@ -97,6 +100,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^11.18.6",
+    "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.0"
   },
   "loki": {
