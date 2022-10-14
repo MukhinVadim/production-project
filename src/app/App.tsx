@@ -2,9 +2,9 @@ import { AppRouter } from 'app/providers/router';
 import classNames from 'classnames';
 import React, { Suspense } from 'react';
 import { ErrorBoundary } from 'shared/lib/error-boundary';
-import { Navbar } from 'widgets/Navbar';
-import { PageError } from 'widgets/PageError';
-import { Sidebar } from 'widgets/Sidebar';
+import { Navbar } from 'widgets/navbar';
+import { PageError } from 'widgets/page-error';
+import { Sidebar } from 'widgets/sidebar';
 
 export const App: React.FC = () => {
   const appClassNames = classNames('app');
