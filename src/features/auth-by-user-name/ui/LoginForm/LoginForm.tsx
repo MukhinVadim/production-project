@@ -13,7 +13,6 @@ export const LoginForm: React.FC = () => {
   const onSubmit = (data: unknown) => console.log(data);
 
   useEffect(() => {
-    console.log(register);
     setFocus('login');
   }, [setFocus]);
 
@@ -29,7 +28,7 @@ export const LoginForm: React.FC = () => {
         placeholder={t('password')}
         {...register('password')}
       />
-      <div>
+      <div className={cls.submitButtonWrapper}>
         <Button type="submit">{t('signIn')}</Button>
       </div>
     </form>

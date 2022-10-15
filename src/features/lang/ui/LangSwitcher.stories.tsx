@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { LangSwitcher } from './LangSwitcher';
 
 export default {
-  title: 'features/LangSwitcher',
+  title: 'features/lang-switcher',
   component: LangSwitcher,
 } as ComponentMeta<typeof LangSwitcher>;
 

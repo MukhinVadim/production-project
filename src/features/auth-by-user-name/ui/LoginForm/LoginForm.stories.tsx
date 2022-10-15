@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { LoginForm } from './LoginForm';
 
 export default {
+  title: 'features/auth-by-user-name/LoginForm',
   component: LoginForm,
 } as ComponentMeta<typeof LoginForm>;
 
@@ -11,6 +12,4 @@ const Template: ComponentStory<typeof LoginForm> = (args) => (
 
 export const Default = Template.bind({});
 
-Default.args = {
-  children: 'LoginForm',
-};
+Default.args = {};

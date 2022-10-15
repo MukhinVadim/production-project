@@ -1,5 +1,9 @@
 .LoginForm {
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: 10px;
+}
+
+.submitButtonWrapper {
+  margin-top: 5px;
 }

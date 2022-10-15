@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { PagePreloader } from './PagePreloader';
 
 export default {
-  title: 'features/PagePreloader',
+  title: 'features/page-preloader',
   component: PagePreloader,
 } as ComponentMeta<typeof PagePreloader>;
 
