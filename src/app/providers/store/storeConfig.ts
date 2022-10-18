@@ -4,9 +4,11 @@ import {
   PreloadedState,
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/user';
+import { signInReducer } from 'features/auth-by-email';
 
 const rootReducer = combineReducers({
   user: userReducer,
+  signIn: signInReducer,
 });
 
 // eslint-disable-next-line no-use-before-define

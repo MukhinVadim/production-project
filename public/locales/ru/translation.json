@@ -6,5 +6,6 @@
   "languageCollapsed": "РУС",
   "signIn": "Войти",
   "login": "Логин",
-  "password": "Пароль"
+  "password": "Пароль",
+  "signOut": "Выйти"
 }

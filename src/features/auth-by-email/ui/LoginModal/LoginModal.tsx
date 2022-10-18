@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Modal } from 'shared/ui/Modal';
 import { ModalProps } from 'shared/ui/Modal/Modal';
-import { LoginForm } from 'features/auth-by-user-name/ui/LoginForm';
+import { LoginForm } from 'features/auth-by-email/ui/LoginForm';
 import cls from './LoginModal.module.scss';
 
 type LoginModalProps = {
@@ -18,7 +18,7 @@ export const LoginModal: React.FC<LoginModalProps> = (props) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <LoginForm />
+      <LoginForm onSuccess={onClose} />
     </Modal>
   );
 };

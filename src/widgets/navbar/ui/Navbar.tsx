@@ -1,11 +1,11 @@
 import classNames from 'classnames';
+import { LoginModal, useAuth, useSignOut } from 'features/auth-by-email';
 import { ThemeSwitcher } from 'features/theme';
-import { useTranslation } from 'react-i18next';
-import { AppLink } from 'shared/ui/AppLink';
 import React from 'react';
-import { Button } from 'shared/ui/Button';
+import { useTranslation } from 'react-i18next';
 import { useToggle } from 'shared/lib/hooks/useToggle';
-import { LoginModal } from 'features/auth-by-user-name';
+import { AppLink } from 'shared/ui/AppLink';
+import { Button } from 'shared/ui/Button';
 import cls from './Navbar.module.scss';
 
 type NavbarProps = {
@@ -15,6 +15,8 @@ type NavbarProps = {
 export const Navbar: React.FC<NavbarProps> = ({ className }) => {
   const [isAuthPopupOpen, toggleAuthPopup] = useToggle();
   const { t } = useTranslation(['about', 'main', 'translation']);
+  const { isAuth, user } = useAuth();
+  const signOut = useSignOut();
 
   return (
     <header className={classNames(cls.Navbar, className)} data-testid="navbar">
@@ -23,7 +25,14 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
         <AppLink to="/">{t('main:main')}</AppLink>
       </div>
       <ThemeSwitcher />
-      <Button onClick={toggleAuthPopup}>{t('translation:signIn')}</Button>
+      {isAuth ? (
+        <>
+          {user?.email}
+          <Button onClick={signOut}>{t('translation:signOut')}</Button>
+        </>
+      ) : (
+        <Button onClick={toggleAuthPopup}>{t('translation:signIn')}</Button>
+      )}
       <LoginModal isOpen={isAuthPopupOpen} onClose={toggleAuthPopup} />
     </header>
   );

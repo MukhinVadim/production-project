@@ -1,2 +1,3 @@
-export { UserState, User } from './model/types';
+export { userAuthDataSelector } from './model/selectors';
+export { UserState } from './types';
 export { userReducer, userActions } from './model/userSlice';

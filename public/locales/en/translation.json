@@ -3,5 +3,8 @@
   "pageNotFound": "Page not found",
   "somethingWentWrong": "Something went wrong...",
   "reload": "Reload page",
-  "languageCollapsed": "EN"
+  "languageCollapsed": "EN",
+  "signIn": "Sign in",
+  "password": "Password",
+  "signOut": "Sign out"
 }

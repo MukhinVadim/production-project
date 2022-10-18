@@ -28,5 +28,5 @@
     "./config/jest/jest-setup.ts",
     "./src/**/*.tsx",
     "./src/**/*.ts"
-  ]
+, "src/features/auth-by-email/model/api/signIn.ts"  ]
 }

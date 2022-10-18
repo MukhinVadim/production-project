@@ -1,3 +1,4 @@
+import { useInitAuth } from 'app/lib/useInitAuth';
 import { AppRouter } from 'app/providers/router';
 import classNames from 'classnames';
 import React, { Suspense } from 'react';
@@ -8,6 +9,7 @@ import { Sidebar } from 'widgets/sidebar';
 
 export const App: React.FC = () => {
   const appClassNames = classNames('app');
+  useInitAuth();
 
   return (
     <div className={appClassNames}>
