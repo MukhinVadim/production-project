@@ -154,9 +154,9 @@ jobs:
         with:
           name: build
           path: build
-      - name: Deploy to firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
         with:
-          repoToken: '${{ secrets.FIREBASE_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRODUCTION_PROJECT_698FA }}'
-          projectId: production-project-698fa
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
