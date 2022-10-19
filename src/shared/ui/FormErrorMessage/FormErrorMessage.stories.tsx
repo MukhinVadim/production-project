@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { FormErrorMessage } from './FormErrorMessage';
 
 export default {
+  title: 'UI/FormErrorMessage',
   component: FormErrorMessage,
 } as ComponentMeta<typeof FormErrorMessage>;
 

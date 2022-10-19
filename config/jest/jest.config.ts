@@ -28,12 +28,15 @@ export default {
   rootDir: '../../',
   // The glob patterns Jest uses to detect test files
   testMatch: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[tj]s?(x)'],
+  // A path to a custom resolver
+  // resolver: 'jest-node-exports-resolver',
   modulePaths: ['<rootDir>', '<rootDir>src'],
   roots: ['<rootDir>', '<rootDir>src'],
   setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
   transform: {
     '\\.[jt]sx?$': 'babel-jest',
   },
+  transformIgnorePatterns: ['node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)'],
   moduleNameMapper: {
     '^@config(.*)$': '<rootDir>/config$1',
     '\\.(svg)$': '<rootDir>/config/jest/__mocks__/jestEmptyComponent.tsx',
@@ -120,9 +123,6 @@ export default {
 
   // Reset the module registry before running each individual test
   // resetModules: false,
-
-  // A path to a custom resolver
-  // resolver: undefined,
 
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,

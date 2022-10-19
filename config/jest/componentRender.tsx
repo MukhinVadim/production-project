@@ -8,6 +8,7 @@ import { setupStore } from 'app/providers/store';
 import { PreloadedState } from '@reduxjs/toolkit';
 import { AppStore, RootState } from 'app/providers/store/storeConfig';
 import i18nForTests from './i18nForTests';
+// import 'firebase';
 
 interface ComponentRenderOptions {
   route?: string;
