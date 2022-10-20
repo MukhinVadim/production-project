@@ -1,9 +1,10 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import dotenv from 'dotenv';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import dotenv from 'dotenv';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev, analyze }: BuildOptions) {
@@ -22,6 +23,17 @@ export function buildPlugins({ paths, isDev, analyze }: BuildOptions) {
   return [
     new HTMLWebpackPlugin({
       template: paths.html,
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'public',
+          to: '.',
+          globOptions: {
+            ignore: ['**/index.html'],
+          },
+        },
+      ],
     }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
