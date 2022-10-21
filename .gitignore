@@ -2,3 +2,4 @@
 /build
 /storybook-static
 versions.txt
+.env
