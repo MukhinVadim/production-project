@@ -12,7 +12,7 @@ export const useSignOut = () => {
 
     auth.signOut();
     dispatch(resetUser());
-  }, []);
+  }, [dispatch, resetUser]);
 
   return signOutCallback;
 };

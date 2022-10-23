@@ -15,5 +15,5 @@ export const useInitAuth = () => {
         dispatch(setUser(user.providerData[0]));
       }
     });
-  }, []);
+  }, [setUser, dispatch]);
 };

@@ -19,7 +19,7 @@ interface ComponentRenderOptions {
 export const componentRender = (
   component: ReactNode,
   preloadedState = {},
-  store = setupStore(preloadedState),
+  store = setupStore(preloadedState as PreloadedState<RootState>),
   options: ComponentRenderOptions = {}
 ) => {
   const { route = '/' } = options;
