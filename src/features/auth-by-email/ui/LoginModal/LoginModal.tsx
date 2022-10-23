@@ -1,8 +1,9 @@
-import React from 'react';
 import classNames from 'classnames';
+import { PagePreloader } from 'features/page-preloader';
+import React, { Suspense } from 'react';
 import { Modal } from 'shared/ui/Modal';
 import { ModalProps } from 'shared/ui/Modal/Modal';
-import { LoginForm } from 'features/auth-by-email/ui/LoginForm';
+import { LoginFormAsync as LoginForm } from '../LoginForm/LoginFormAsync';
 import cls from './LoginModal.module.scss';
 
 type LoginModalProps = {
@@ -18,7 +19,9 @@ export const LoginModal: React.FC<LoginModalProps> = (props) => {
       isOpen={isOpen}
       onClose={onClose}
     >
-      <LoginForm onSuccess={onClose} />
+      <Suspense fallback={<PagePreloader />}>
+        {isOpen && <LoginForm onSuccess={onClose} />}
+      </Suspense>
     </Modal>
   );
 };

@@ -37,4 +37,4 @@ export const parameters = {
   },
 };
 
-export const decorators = [withRouter, withStore];
+export const decorators = [withRouter, withStore({})];
