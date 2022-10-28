@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { AuthError } from 'firebase/auth';
-import { SignInState } from '../types';
-import { signIn } from './api/signIn';
+import { SignInState } from '../../types';
+import { signIn } from '../api/signIn';
 
 const initialState: SignInState = {};
 

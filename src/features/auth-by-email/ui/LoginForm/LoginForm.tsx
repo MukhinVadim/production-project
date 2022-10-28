@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { signIn } from 'features/auth-by-email/model/api/signIn';
-import { authSelector } from 'features/auth-by-email/model/selectors';
-import { signInReducer } from 'features/auth-by-email/model/signInSlice';
+import { signInSelector } from 'features/auth-by-email/model/selectors/selectors';
+import { signInReducer } from 'features/auth-by-email/model/slices/signInSlice';
 import { Inputs } from 'features/auth-by-email/types';
 import React, { useEffect } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -28,7 +28,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const { t } = useTranslation('translation');
   const dispatch = useAppDispatch();
   const { register, handleSubmit, setFocus } = useForm<Inputs>();
-  const { error } = useAppSelector(authSelector) ?? {};
+  const { error } = useAppSelector(signInSelector) ?? {};
 
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) =>
     dispatch(signIn({ email, password, onSuccess }));
