@@ -30,8 +30,12 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const { register, handleSubmit, setFocus } = useForm<Inputs>();
   const { error } = useAppSelector(signInSelector) ?? {};
 
-  const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) =>
-    dispatch(signIn({ email, password, onSuccess }));
+  const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
+    const result = await dispatch(signIn({ email, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  };
 
   useEffect(() => {
     setFocus('email');

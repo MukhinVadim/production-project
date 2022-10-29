@@ -7,17 +7,13 @@ import {
   UserCredential,
 } from 'firebase/auth';
 
-export const signIn = createAsyncThunk<
-  UserCredential,
-  Inputs & { onSuccess?: () => void }
->(
+export const signIn = createAsyncThunk<UserCredential, Inputs>(
   'authByEmail/signIn',
-  async ({ email, password, onSuccess }, { rejectWithValue, dispatch }) => {
+  async ({ email, password }, { rejectWithValue, dispatch }) => {
     const auth = getAuth();
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       dispatch(userActions.setUser(response.user.providerData[0]));
-      onSuccess?.();
       return response;
     } catch (e) {
       return rejectWithValue(e);
