@@ -1,0 +1,9 @@
+import { render, screen } from '@testing-library/react';
+import {{pascalCase name}}Page from './{{pascalCase name}}Page';
+
+describe('{{pascalCase name}}Page', () => {
+  test('Test render', () => {
+    render(<{{pascalCase name}}Page/>);
+    expect(screen.getByTestId('{{kebabCase name}}-page')).toBeInTheDocument();
+  });
+});

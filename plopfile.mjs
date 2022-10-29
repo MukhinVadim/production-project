@@ -45,8 +45,45 @@ export default function (
       },
     ],
   });
-  plop.setGenerator('entity', {
-    prompts: [],
-    actions: [],
+  plop.setGenerator('page', {
+    prompts: [
+      {
+        type: 'page name',
+        name: 'name',
+        message: 'page name',
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: 'src/pages/{{kebabCase name}}-page/ui/{{pascalCase name}}Page.tsx',
+        templateFile: './templates/page/page.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{kebabCase name}}-page/ui/{{pascalCase name}}PageAsync.tsx',
+        templateFile: './templates/page/page-async.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{kebabCase name}}-page/ui/{{pascalCase name}}Page.stories.tsx',
+        templateFile: './templates/page/stories.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{kebabCase name}}-page/ui/{{pascalCase name}}Page.module.scss',
+        templateFile: './templates/page/style.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{kebabCase name}}-page/ui/{{pascalCase name}}Page.test.tsx',
+        templateFile: './templates/page/test.hbs',
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{kebabCase name}}-page/index.ts',
+        templateFile: './templates/page/index.hbs',
+      },
+    ],
   });
 }
