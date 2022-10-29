@@ -1,0 +1,14 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import {{pascalCase name}}Page from './{{pascalCase name}}Page';
+
+export default {
+  component: {{pascalCase name}}Page,
+} as ComponentMeta<typeof {{pascalCase name}}Page>;
+
+const Template: ComponentStory<typeof {{pascalCase name}}Page> = (args) => <{{pascalCase name}}Page {...args} />;
+
+export const Default = Template.bind({});
+
+Default.args = {
+  children: '{{pascalCase name}}Page',
+};

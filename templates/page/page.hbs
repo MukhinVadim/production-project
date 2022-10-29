@@ -1,0 +1,19 @@
+import React from 'react';
+import classNames from 'classnames';
+import cls from './{{pascalCase name}}Page.module.scss';
+
+type {{pascalCase name}}PageProps = {
+  className?: string
+}
+
+const {{pascalCase name}}Page: React.FC<{{pascalCase name}}PageProps> = (props) => {
+  const { className } = props;
+
+  return (
+    <div className={classNames(cls.{{pascalCase name}}Page, className)} data-testid="{{kebabCase name}}-page">
+      {{pascalCase name}}Page
+    </div>
+  );
+};
+
+export default {{pascalCase name}}Page;
