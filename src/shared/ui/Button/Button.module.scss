@@ -3,11 +3,13 @@
   height: 40px;
   align-items: center;
   justify-content: center;
+  column-gap: 5px;
   cursor: pointer;
   border-radius: var(--border-radius-s);
   transition: all 0.3s;
   color: var(--primary-color);
   padding: 0 16px;
+  text-decoration: none;
 }
 
 .onlyIcon {
