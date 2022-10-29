@@ -1,6 +1,7 @@
 .Sidebar {
   display: flex;
   flex-direction: column;
+  row-gap: 5px;
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
   border-right: var(--border-primary);
@@ -11,7 +12,7 @@
 
 .sidebarToggle {
   display: flex;
-  justify-content: end;
+  justify-content: start;
 }
 
 .icon {
