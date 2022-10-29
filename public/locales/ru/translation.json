@@ -7,5 +7,6 @@
   "signIn": "Войти",
   "login": "Логин",
   "password": "Пароль",
-  "signOut": "Выйти"
+  "signOut": "Выйти",
+  "profilePage": "Профиль"
 }
