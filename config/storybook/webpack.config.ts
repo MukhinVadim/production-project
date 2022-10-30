@@ -14,14 +14,15 @@ export default ({ config }: { config: Configuration }) => {
     '@config': path.resolve(__dirname, '..', '..', 'config'),
   };
   if (config.module) {
-    // eslint-disable-next-line no-param-reassign
-    config.module.rules = config.module?.rules?.map((rule: RuleSetRule) => {
-      if (/svg/.test(rule.test as string)) {
-        return { ...rule, exclude: /\.svg$/i };
-      }
+    config.module.rules = (config.module?.rules as RuleSetRule[])?.map(
+      (rule) => {
+        if (/svg/.test(rule.test as string)) {
+          return { ...rule, exclude: /\.svg$/i };
+        }
 
-      return rule;
-    });
+        return rule;
+      }
+    );
   }
 
   config.module?.rules?.push({
