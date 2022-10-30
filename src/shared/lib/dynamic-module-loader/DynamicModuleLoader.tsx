@@ -7,13 +7,14 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 type DynamicModuleLoaderProps = {
   children: ReactElement;
   reducers: { [name in keyof RootState]?: Reducer };
+  removeAfterUnmount?: boolean;
 };
 
 export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> = (
   props
 ) => {
+  const { children, reducers, removeAfterUnmount } = props;
   const store = useStore();
-  const { children, reducers } = props;
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -23,10 +24,12 @@ export const DynamicModuleLoader: React.FC<DynamicModuleLoaderProps> = (
     });
 
     return () => {
-      Object.entries(reducers).forEach(([name]) => {
-        store.reducerManager.remove(name as keyof RootState);
-        dispatch({ type: `@DESTROY  ${name} reducer` });
-      });
+      if (removeAfterUnmount) {
+        Object.entries(reducers).forEach(([name]) => {
+          store.reducerManager.remove(name as keyof RootState);
+          dispatch({ type: `@DESTROY  ${name} reducer` });
+        });
+      }
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
