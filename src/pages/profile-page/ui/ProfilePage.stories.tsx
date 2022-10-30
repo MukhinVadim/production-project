@@ -11,6 +11,4 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => (
 
 export const Default = Template.bind({});
 
-Default.args = {
-  children: 'ProfilePage',
-};
+Default.args = {};

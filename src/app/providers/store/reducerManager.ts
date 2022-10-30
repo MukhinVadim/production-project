@@ -7,9 +7,16 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 
+type ReducerManager<S, A extends Action = AnyAction> = {
+  getReducerMap: () => ReducersMapObject<S, A>;
+  reduce: Reducer<CombinedState<S>, A>;
+  add: (key: keyof S, reducer: Reducer<S[keyof S]>) => void;
+  remove: (key: keyof S) => void;
+};
+
 export function createReducerManager<S, A extends Action = AnyAction>(
   initialReducers: ReducersMapObject<S, A>
-) {
+): ReducerManager<S, A> {
   const reducers = { ...initialReducers };
 
   let combinedReducer = combineReducers(reducers);
@@ -19,11 +26,11 @@ export function createReducerManager<S, A extends Action = AnyAction>(
   return {
     getReducerMap: () => reducers,
 
-    reduce: (state: CombinedState<S>, action: AnyAction) => {
+    reduce: (state, action) => {
       if (keysToRemove.length > 0) {
-        state = { ...state };
+        state = { ...state } as CombinedState<S>;
         keysToRemove.forEach((key) => {
-          delete state[key];
+          delete state?.[key];
         });
         keysToRemove = [];
       }

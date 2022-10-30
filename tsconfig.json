@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "strict": true,
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",
@@ -15,7 +16,6 @@
       "@config/*": ["./config/*"], 
       "*": ["./src/*"]
     },
-    
   },
   "ts-node": {
     "compilerOptions": {
@@ -28,5 +28,5 @@
     "./config/jest/jest-setup.ts",
     "./src/**/*.tsx",
     "./src/**/*.ts"
-, "src/features/auth-by-email/model/api/signIn.ts"  ]
+  ]
 }

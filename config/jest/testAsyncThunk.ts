@@ -10,16 +10,19 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
 
   getState: () => RootState;
 
+  navigate?: jest.MockedFn<any>;
+
   actionCreator: ActionCreator<Return, Arg, RejectedValue>;
 
   constructor(actionCreator: ActionCreator<Return, Arg, RejectedValue>) {
     this.actionCreator = actionCreator;
     this.dispatch = jest.fn();
     this.getState = jest.fn();
+    this.navigate = jest.fn();
   }
 
   async callThunk(arg: Arg) {
     const action = this.actionCreator(arg);
-    return action(this.dispatch, this.getState, undefined);
+    return action(this.dispatch, this.getState, { navigate: this.navigate });
   }
 }

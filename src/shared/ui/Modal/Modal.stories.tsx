@@ -1,16 +1,13 @@
-import React from 'react';
-import type { ComponentMeta, Meta, StoryFn } from '@storybook/react';
+import type { ComponentMeta, StoryFn } from '@storybook/react';
 
 import { useToggle } from 'shared/lib/hooks/useToggle';
 import { Button } from 'shared/ui/Button';
 import { Modal, ModalProps } from './Modal';
 
-const meta: Meta = {
+export default {
   component: Modal,
   title: 'UI/Modal',
 } as ComponentMeta<typeof Modal>;
-
-export default meta;
 
 const Template: StoryFn<ModalProps> = (args) => {
   const [isModal, toggleModal] = useToggle();

@@ -22,6 +22,6 @@ export const signIn = createAsyncThunk<
 
     return response;
   } catch (e) {
-    return rejectWithValue(e);
+    return rejectWithValue(e as AuthError);
   }
 });

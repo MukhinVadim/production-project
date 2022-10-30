@@ -33,7 +33,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
   const onSubmit: SubmitHandler<Inputs> = async ({ email, password }) => {
     const result = await dispatch(signIn({ email, password }));
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess();
+      onSuccess?.();
     }
   };
 

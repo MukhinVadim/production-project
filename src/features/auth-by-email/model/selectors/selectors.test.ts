@@ -1,5 +1,5 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { RootState } from 'app/providers/store';
+import { DeepPartial } from 'react-hook-form';
 import { signInSelector } from './selectors';
 
 describe('signInSelector', () => {

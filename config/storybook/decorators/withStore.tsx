@@ -1,6 +1,7 @@
-import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
+import { ReducersMapObject } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
 import { signInReducer } from 'features/auth-by-email';
+import { DeepPartial } from 'react-hook-form';
 import { Provider } from 'react-redux';
 import {
   AsyncStateModules,
@@ -15,9 +16,8 @@ const asyncReducers: ReducersMapObject<AsyncStateModules> = {
 export const withStore =
   (state: DeepPartial<RootState>) => (StoryComponent: Story) => {
     const store = setupStore({
-      // @ts-expect-error don't need full store for stories
-      preloadedState: state,
-      reducers: asyncReducers,
+      preloadedState: state as RootState,
+      reducers: asyncReducers as Partial<ReducersMapObject<RootState>>,
     });
 
     return (
