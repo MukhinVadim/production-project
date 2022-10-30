@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { AuthError } from 'firebase/auth';
 import { SignInState } from '../../types';
 import { signIn } from '../api/signIn';
 
@@ -18,7 +17,7 @@ export const signInSlice = createSlice({
     });
     builder.addCase(signIn.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload as AuthError;
+      state.error = action.payload;
     });
   },
 });

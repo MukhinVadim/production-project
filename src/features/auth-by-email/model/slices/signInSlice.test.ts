@@ -1,5 +1,5 @@
 import { signInReducer } from 'features/auth-by-email/model/slices/signInSlice';
-import { UserCredential } from 'firebase/auth';
+import { AuthError, UserCredential } from 'firebase/auth';
 import { signIn } from '../api/signIn';
 
 describe('signInSlice', () => {
@@ -41,7 +41,7 @@ describe('signInSlice', () => {
           },
           {
             name: 'error',
-          }
+          } as AuthError
         )
       )
     ).toEqual({

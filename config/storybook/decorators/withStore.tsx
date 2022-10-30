@@ -14,8 +14,11 @@ const asyncReducers: ReducersMapObject<AsyncStateModules> = {
 
 export const withStore =
   (state: DeepPartial<RootState>) => (StoryComponent: Story) => {
-    // @ts-expect-error don't need full store for stories
-    const store = setupStore(state, asyncReducers);
+    const store = setupStore({
+      // @ts-expect-error don't need full store for stories
+      preloadedState: state,
+      reducers: asyncReducers,
+    });
 
     return (
       <Provider store={store}>
