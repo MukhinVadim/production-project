@@ -1,3 +1,5 @@
+![workflow](https://github.com/MukhinVadim/production-project/actions/workflows/main.yml/badge.svg)
+
 # production-project
 ✅ Project for the presentation of my knowledge in the front-end development
 
