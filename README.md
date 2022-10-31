@@ -1,4 +1,5 @@
 ![workflow](https://github.com/MukhinVadim/production-project/actions/workflows/main.yml/badge.svg)
+![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 
 # production-project
 ✅ Project for the presentation of my knowledge in the front-end development
