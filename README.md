@@ -1,4 +1,5 @@
 ![workflow](https://github.com/MukhinVadim/production-project/actions/workflows/main.yml/badge.svg)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 
 # production-project
