@@ -3,7 +3,7 @@
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 
 # production-project
-✅ Project for the presentation of my knowledge in the front-end development
+My playground for frontend development
 
 ## Main stack
 
