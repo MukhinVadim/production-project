@@ -7,21 +7,38 @@ import { Modal, ModalProps } from './Modal';
 export default {
   component: Modal,
   title: 'UI/Modal',
+  parameters: {
+    loki: { skip: true },
+  },
 } as ComponentMeta<typeof Modal>;
 
-const Template: StoryFn<ModalProps> = (args) => {
+const StoryModal: React.FC<ModalProps> = (props) => {
   const [isModal, toggleModal] = useToggle();
   return (
     <>
       <Button onClick={toggleModal}>Open modal</Button>
-      <Modal {...args} isOpen={isModal} onClose={toggleModal} />
+      <Modal {...props} isOpen={isModal} onClose={toggleModal} />
     </>
   );
 };
 
-export const Basic = Template.bind({});
+const Template: StoryFn<ModalProps> = (args) => <Modal {...args} />;
 
-Basic.args = {
+const TemplateWithButton: StoryFn<ModalProps> = (args) => (
+  <StoryModal {...args} />
+);
+
+export const Default = Template.bind({});
+Default.args = {
+  children: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+  doloremque reprehenderit laborum laudantium quos voluptas, nostrum beatae ea
+    exercitationem ut vero reiciendis sit. Architecto placeat repellat illo accusamus
+     laudantium consequuntur!`,
+};
+
+export const WithButton = TemplateWithButton.bind({});
+
+WithButton.args = {
   children: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
    doloremque reprehenderit laborum laudantium quos voluptas, nostrum beatae ea
      exercitationem ut vero reiciendis sit. Architecto placeat repellat illo accusamus

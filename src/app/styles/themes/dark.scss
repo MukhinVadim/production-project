@@ -1,7 +1,10 @@
 .dark_theme {
   --bg-color: #1a202c;
   --primary-color: var(--teal-200);
-  --primary-hover: rgb(129 230 217 / 12%);
+  --primary-hover-ghost: rgb(129 230 217 / 12%);
+  --primary-active-ghost: rgb(129 230 217 / 30%);
+  --primary-hover-solid: var(--teal-500);
+  --primary-active-solid: var(--teal-600);
   --secondary-color: var(--gray-400);
   --text-color-primary: var(--gray-100);
   --text-color-secondary: var(--gray-600);
@@ -9,4 +12,5 @@
   --spinner-color: var(--white);
   --outline-color: var(--blue-200);
   --error-color: var(--red-300);
+  --shadows-outline: 0 0 0 3px var(--outline-color);
 }

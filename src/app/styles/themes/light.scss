@@ -1,7 +1,10 @@
-.light_theme {
+:root {
   --bg-color: var(--white);
   --primary-color: var(--teal-600);
-  --primary-hover: rgb(129 230 217 / 12%);
+  --primary-hover-ghost: rgb(129 230 217 / 12%);
+  --primary-active-ghost: rgb(129 230 217 / 30%);
+  --primary-hover-solid: var(--teal-700);
+  --primary-active-solid: var(--teal-800);
   --secondary-color: var(--gray-400);
   --text-color-primary: var(--gray-700);
   --text-color-secondary: var(--gray-400);
@@ -9,4 +12,5 @@
   --spinner-color: var(--gray-700);
   --outline-color: var(--blue-600);
   --error-color: var(--red-500);
+  --shadows-outline: 0 0 0 3px var(--outline-color);
 }
