@@ -1,5 +1,5 @@
-import { UserInfo } from 'firebase/auth';
+import { User } from 'firebase/auth';
 
 export interface UserState {
-  user?: UserInfo;
+  user?: User;
 }

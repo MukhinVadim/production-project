@@ -13,7 +13,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useAppSelector } from 'shared/lib/hooks/useAppSelector';
 import { Button } from 'shared/ui/Button';
 import { FormErrorMessage } from 'shared/ui/FormErrorMessage';
-import { Input } from 'shared/ui/Input';
+import { TextField } from 'shared/ui/TextField';
 import cls from './LoginForm.module.scss';
 
 type LoginFormProps = {
@@ -49,10 +49,16 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
           data-testid="login-form"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <Input type="text" placeholder={t('login')} {...register('email')} />
-          <Input
+          <TextField
+            type="text"
+            placeholder={t('login')}
+            label={t('login')}
+            {...register('email')}
+          />
+          <TextField
             type="password"
             placeholder={t('password')}
+            label={t('password')}
             {...register('password')}
           />
           {error && (

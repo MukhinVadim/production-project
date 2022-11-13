@@ -1,9 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { componentRender } from '@config/jest/componentRender';
+import { screen } from '@testing-library/react';
 import { {{pascalCase name}} } from './{{pascalCase name}}';
 
 describe('{{pascalCase name}}', () => {
   test('Test render', () => {
-    render(<{{pascalCase name}}/>);
+    componentRender(<{{pascalCase name}}/>);
     expect(screen.getByTestId('{{kebabCase name}}')).toBeInTheDocument();
   });
 });

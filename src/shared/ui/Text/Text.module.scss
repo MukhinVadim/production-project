@@ -1,0 +1,39 @@
+.Text {
+  word-break: break-word;
+
+  &.xs {
+    font: var(--font-xs);
+  }
+
+  &.s {
+    font: var(--font-s);
+  }
+
+  &.m {
+    font: var(--font-m);
+  }
+
+  &.l {
+    font: var(--font-l);
+  }
+
+  &.primary {
+    color: var(--text-color-primary);
+  }
+
+  &.secondary {
+    color: var(--text-color-secondary);
+  }
+
+  &.light {
+    font-weight: var(--font-weight-light);
+  }
+
+  &.regular {
+    font-weight: var(--font-weight-regular);
+  }
+
+  &.bold {
+    font-weight: var(--font-weight-bold);
+  }
+}

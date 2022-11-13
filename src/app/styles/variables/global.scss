@@ -1,6 +1,9 @@
 :root {
   // fonts
   --font-family-main: "Roboto", sans-serif;
+  --font-size-xs: 16px;
+  --font-line-xs: 18px;
+  --font-xs: var(--font-size-xs) / var(--font-line-xs) var(--font-family-main);
   --font-size-s: 18px;
   --font-line-s: 20px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);

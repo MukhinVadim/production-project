@@ -18,7 +18,7 @@ export const signIn = createAsyncThunk<
   const auth = getAuth();
   try {
     const response = await signInWithEmailAndPassword(auth, email, password);
-    dispatch(userActions.setUser(response.user.providerData[0]));
+    dispatch(userActions.setUser(response.user));
 
     return response;
   } catch (e) {

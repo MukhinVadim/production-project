@@ -1,0 +1,43 @@
+.TextField {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  .input {
+    background: var(--bg-color);
+    color: var(--text-color-primary);
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    position: relative;
+    appearance: none;
+    border: var(--border-primary);
+    border-radius: var(--border-radius-s);
+    padding-inline-start: 16px;
+    padding-inline-end: 16px;
+    transition: all 0.3s;
+
+    &:focus-visible {
+      border-color: var(--outline-color);
+      box-shadow: var(--shadows-outline);
+    }
+
+    &::placeholder {
+      color: var(--text-color-secondary);
+    }
+  }
+
+  .label {
+    color: var(--secondary-color);
+    font: var(--font-xs);
+  }
+
+  &.required {
+    .label::after {
+      content: " *";
+      color: var(--error-color);
+    }
+  }
+}

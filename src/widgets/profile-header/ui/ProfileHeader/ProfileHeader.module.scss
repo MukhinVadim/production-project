@@ -1,0 +1,22 @@
+.ProfileHeader {
+  border: var(--border-primary);
+  padding: 10px;
+  border-radius: var(--border-radius-m);
+  position: relative;
+
+  .editButton {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .headerWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .name {
+    margin-top: 20px;
+  }
+}

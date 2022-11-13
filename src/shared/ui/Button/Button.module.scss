@@ -12,6 +12,7 @@
   text-decoration: none;
   font: var(--font-s);
   font-weight: var(--font-weight-regular);
+  flex: none;
 
   &:focus-visible {
     border-color: var(--outline-color);
@@ -31,8 +32,8 @@
 }
 
 .onlyIcon {
-  padding: 0;
   width: 40px;
+  padding: 10px;
 }
 
 .ghost {

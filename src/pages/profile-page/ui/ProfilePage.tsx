@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { ProfileHeader } from 'widgets/profile-header/ui/ProfileHeader';
 import cls from './ProfilePage.module.scss';
 
 type ProfilePageProps = {
@@ -8,7 +8,6 @@ type ProfilePageProps = {
 };
 
 const ProfilePage: React.FC<ProfilePageProps> = (props) => {
-  const { t } = useTranslation('translation');
   const { className } = props;
 
   return (
@@ -16,7 +15,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
       className={classNames(cls.ProfilePage, className)}
       data-testid="profile-page"
     >
-      {t('profilePage')}
+      <ProfileHeader />
     </div>
   );
 };

@@ -12,7 +12,7 @@ export const useInitAuth = () => {
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        dispatch(setUser(user.providerData[0]));
+        dispatch(setUser(user));
       }
     });
   }, [setUser, dispatch]);
